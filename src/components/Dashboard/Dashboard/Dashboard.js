@@ -15,16 +15,27 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-
+import {
+  Switch,
+  Route,
+  Link,
+  useRouteMatch
+} from "react-router-dom";
 import Button from '@restart/ui/esm/Button';
-import { Link } from 'react-router-dom';
+import DashboardHome from '../DashboardHome/DashboardHome';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import AddProduct from '../AddProduct/AddProduct';
+import useAuth from '../../../hooks/useAuth';
+import AdminRoute from '../AdminRoute/AdminRoute';
+
 
 const drawerWidth = 200;
 
 function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  let { path, url } = useRouteMatch();
+  const{admin} = useAuth();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -34,9 +45,14 @@ function Dashboard(props) {
       <Toolbar />
       <Divider />
       <Link to = "/home"><Button color="inherit">Home</Button></Link>
+      <Link to = {`${url}`}><Button color="inherit">Dashboard</Button></Link>
+      {admin && <Box>
+        <Link to = {`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
+        <Link to = {`${url}/addProduct`}><Button color="inherit">Add Product</Button></Link>
+      </Box>
+      }
       
-      
-      <List>
+      {/* <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
@@ -56,7 +72,7 @@ function Dashboard(props) {
             <ListItemText primary={text} />
           </ListItem>
         ))}
-      </List>
+      </List> */}
     </div>
   );
 
@@ -124,9 +140,19 @@ function Dashboard(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-        <Typography paragraph>
-         content
-        </Typography>
+
+
+      <Switch>
+        <Route exact path={path}>
+          <DashboardHome></DashboardHome>
+        </Route>
+        <AdminRoute path={`${path}/makeAdmin`}>
+          <MakeAdmin></MakeAdmin>
+        </AdminRoute>
+        <AdminRoute path ={`${path}/addProduct`} >
+          <AddProduct></AddProduct>
+        </AdminRoute>
+      </Switch>
        
       </Box>
     </Box>
