@@ -1,0 +1,14 @@
+.always-part{
+    background-color: rgb(29, 31, 28);
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+.always-part img{
+    width: 30%;
+
+}
+.always-text{
+    margin-top: 100px;
+    text-align: start;
+    color: blanchedalmond;
+}

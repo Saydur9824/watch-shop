@@ -1,0 +1,10 @@
+.service-part{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    cursor: pointer;
+    background-color: rgb(225, 243, 243);
+   
+}
+.service-part:hover{
+    background-color: rgb(150, 195, 195);
+    transition: 0.5s;
+}
