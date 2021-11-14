@@ -13,6 +13,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import ManageAllOrder from './components/ManageAllOrder/ManageAllOrder';
 import Update from './components/Update/Update';
 import Register from './components/LogIn/Register/Register';
+import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <PrivateRoute path = '/myOrder/:orderId'>
           <MyOrder></MyOrder>
+          </PrivateRoute>
+          <PrivateRoute path = '/dashboard'>
+          <Dashboard></Dashboard>
           </PrivateRoute>
           <Route path = '/manage'>
             <ManageAllOrder></ManageAllOrder>
