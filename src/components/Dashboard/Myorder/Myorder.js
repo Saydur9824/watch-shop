@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { useParams } from 'react-router';
 
-const MyOrder = () => {
+const Myorder = () => {
     const{orderId} = useParams();
     const[service, setService] = useState({});
 
@@ -13,7 +13,9 @@ const MyOrder = () => {
     },[])
 
     return (
-        <div className = 'mt-5 mb-5'>
+       <>
+        <h1 className='mt-4 mb-2'>Your Orders</h1>
+         <div className = 'mt-5 mb-5'>
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src= {service.img} />
                 <Card.Body>
@@ -24,16 +26,14 @@ const MyOrder = () => {
                     </Card.Text>
                     <Button variant="primary">Go to home</Button>
                 </Card.Body>
-            </Card>
-           
+            </Card>   
         </div>
+       </>
     );
 };
 
-export default MyOrder;
+export default Myorder;
 
 
 
 
-{/* <h2>Details of : {service.name}</h2> */}
-{/* <h2>my order : {orderId}</h2> */}

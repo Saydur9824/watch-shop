@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const ManageAllOrder = () => {
+const ManageProducts = () => {
     const[services, setServices] = useState([]);
 
     useEffect(()=>{
@@ -28,8 +28,8 @@ const ManageAllOrder = () => {
     }
 
     return (
-        <div className = ' mt-5 mb-5'>
-            <h2 className ='mb-4'>Manage all Order</h2>
+        <div className = ' mb-5'>
+            <h2 className ='mb-4'>Manage all Products</h2>
             <Row xs={1} md={3} className="g-4">
          {
               
@@ -60,7 +60,7 @@ const ManageAllOrder = () => {
     );
 };
 
-export default ManageAllOrder;
+export default ManageProducts;
 
 
 

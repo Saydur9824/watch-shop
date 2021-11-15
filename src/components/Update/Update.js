@@ -50,7 +50,7 @@ const Update = () => {
 
     return (
         <div className = 'mt-5 mb-5'>
-            <h1>Update food : {service.name}</h1>
+            <h1>Update Watch : {service.name}</h1>
             
             <form onSubmit = {handleUpdateUser}>
                 <input type="text" placeholder = 'Food name' onChange = {handleNameChange} value = {service.name || ''} /> <br /> <br />

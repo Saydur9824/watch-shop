@@ -21,12 +21,16 @@ import {
   Link,
   useRouteMatch
 } from "react-router-dom";
-import Button from '@restart/ui/esm/Button';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddProduct from '../AddProduct/AddProduct';
 import useAuth from '../../../hooks/useAuth';
 import AdminRoute from '../AdminRoute/AdminRoute';
+import Myorder from '../Myorder/Myorder';
+import Pay from '../Pay/Pay';
+import Review from '../Review/Review';
+import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
+import ManageProducts from '../ManageProducts/ManageProducts';
 
 
 const drawerWidth = 200;
@@ -35,7 +39,7 @@ function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
-  const{admin} = useAuth();
+  const{admin, logOut} = useAuth();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -44,13 +48,22 @@ function Dashboard(props) {
     <div>
       <Toolbar />
       <Divider />
-      <Link to = "/home"><Button color="inherit">Home</Button></Link>
-      <Link to = {`${url}`}><Button color="inherit">Dashboard</Button></Link>
-      {admin && <Box>
-        <Link to = {`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
-        <Link to = {`${url}/addProduct`}><Button color="inherit">Add Product</Button></Link>
-      </Box>
-      }
+
+<Link style = {{textDecoration : 'none', color: 'blue', fontSize: '20px'}} to = "/home">Home</Link> <br/>
+<Link style = {{textDecoration : 'none', color: 'blue', fontSize: '20px'}} to = {`${url}`}>Dashboard</Link><br/>
+<Link style = {{textDecoration : 'none', color: 'blue', fontSize: '20px'}} to = {`${url}/myorder`}>My Order</Link><br/>
+<Link style = {{textDecoration : 'none', color: 'blue', fontSize: '20px'}} to = {`${url}/review`}>Review</Link><br/>
+<Link style = {{textDecoration : 'none', color: 'blue', fontSize: '20px'}} to = {`${url}/pay`}>Pay</Link><br/>
+
+{admin && <Box>
+  <Link style = {{textDecoration : 'none', color: 'blue', fontSize: '20px'}} to = {`${url}/makeAdmin`}>Make Admin</Link><br/>
+  <Link style = {{textDecoration : 'none', color: 'blue', fontSize: '20px'}} to = {`${url}/addProduct`}>Add Product</Link><br/>
+  <Link style = {{textDecoration : 'none', color: 'blue', fontSize: '20px'}} to = {`${url}/manageAllOrders`}>Manage All Orders</Link><br/>
+  <Link style = {{textDecoration : 'none', color: 'blue', fontSize: '20px'}} to = {`${url}/manageProducts`}>Manage Products</Link>
+</Box>
+}
+<Link style = {{textDecoration : 'none', color: 'blue', fontSize: '20px'}} onClick={logOut}>Logout</Link> <br/>
+
       
       {/* <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
@@ -146,11 +159,26 @@ function Dashboard(props) {
         <Route exact path={path}>
           <DashboardHome></DashboardHome>
         </Route>
+        <Route path={`${path}/myorder`}>
+          <Myorder></Myorder>
+        </Route>
+        <Route path={`${path}/pay`}>
+          <Pay></Pay>
+        </Route>
+        <Route path={`${path}/review`}>
+          <Review></Review>
+        </Route>
         <AdminRoute path={`${path}/makeAdmin`}>
           <MakeAdmin></MakeAdmin>
         </AdminRoute>
         <AdminRoute path ={`${path}/addProduct`} >
           <AddProduct></AddProduct>
+        </AdminRoute>
+        <AdminRoute path ={`${path}/manageAllOrders`} >
+          <ManageAllOrders></ManageAllOrders>
+        </AdminRoute>
+        <AdminRoute path ={`${path}/manageProducts`} >
+          <ManageProducts></ManageProducts>
         </AdminRoute>
       </Switch>
        

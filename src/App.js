@@ -5,15 +5,13 @@ import Home from './components/Home/Home';
 import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
-import AddNewService from './components/AddNewService/AddNewService';
-import MyOrder from './components/MyOrder/MyOrder';
 import AuthProvider from './context/AuthProvider';
 import LogIn from './components/LogIn/LogIn';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import ManageAllOrder from './components/ManageAllOrder/ManageAllOrder';
 import Update from './components/Update/Update';
 import Register from './components/LogIn/Register/Register';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
+import Myorder from './components/Dashboard/Myorder/Myorder';
 
 function App() {
   return (
@@ -28,18 +26,12 @@ function App() {
           <Route path = '/home'>
             <Home></Home>
           </Route>
-          <Route path = '/addnewservice'>
-            <AddNewService></AddNewService>
-          </Route>
-          <PrivateRoute path = '/myOrder/:orderId'>
-          <MyOrder></MyOrder>
+          <PrivateRoute path = '/myorder/:orderId'>
+          <Myorder></Myorder>
           </PrivateRoute>
           <PrivateRoute path = '/dashboard'>
           <Dashboard></Dashboard>
           </PrivateRoute>
-          <Route path = '/manage'>
-            <ManageAllOrder></ManageAllOrder>
-          </Route>
           <Route path ='/services/update/:id'>
             <Update></Update>
           </Route>
