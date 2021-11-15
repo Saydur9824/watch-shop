@@ -18,7 +18,7 @@ const Services = () => {
                 <h1 className='mb-5'>Popular Watches</h1>
             <Row xs={1} md={3} className="g-4">
             {
-                services.map(service => <Service
+                services.slice(0,6).map(service => <Service
                     key={service._id}
                      service = {service} 
                     ></Service> )

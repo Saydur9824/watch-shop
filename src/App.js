@@ -12,6 +12,7 @@ import Update from './components/Update/Update';
 import Register from './components/LogIn/Register/Register';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import Myorder from './components/Dashboard/Myorder/Myorder';
+import Explor from './components/Explor/Explor';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path = '/home'>
             <Home></Home>
+          </Route>
+          <Route path = '/explor'>
+            <Explor></Explor>
           </Route>
           <PrivateRoute path = '/myorder/:orderId'>
           <Myorder></Myorder>
