@@ -50,7 +50,7 @@ function Dashboard(props) {
       <Divider />
 
 <Link style = {{textDecoration : 'none', color: 'blue', fontSize: '20px'}} to = "/home">Home</Link> <br/>
-<Link style = {{textDecoration : 'none', color: 'blue', fontSize: '20px'}} to = {`${url}`}>Dashboard</Link><br/>
+<Link style = {{textDecoration : 'none', marginTop:'5px', color: 'blue', fontSize: '20px'}} to = {`${url}`}>Dashboard</Link><br/>
 <Link style = {{textDecoration : 'none', color: 'blue', fontSize: '20px'}} to = {`${url}/myorder`}>My Order</Link><br/>
 <Link style = {{textDecoration : 'none', color: 'blue', fontSize: '20px'}} to = {`${url}/review`}>Review</Link><br/>
 <Link style = {{textDecoration : 'none', color: 'blue', fontSize: '20px'}} to = {`${url}/pay`}>Pay</Link><br/>
