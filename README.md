@@ -2,6 +2,11 @@
 
 This project  live website link IS [https://foodsense-c9a65.web.app/](https://foodsense-c9a65.web.app/).
 
+## About this website
+
+This is watch selling based website. A normal user can see all watch. He will have to login to buy them. Google and normal email/pass login method has been implemented. User can see and delete his order in dashboard after signing in. He can even share his experience by giving ratings. There is also an admin section which only an admin can enter. Admin has some special power like deleting order, products , add products or make another admin.
+There are 7 section is the home page including Header, banner, products , ratings , specil, desiner and footer.
+
 ## Available technology
 1.JSX
 2.component base site
