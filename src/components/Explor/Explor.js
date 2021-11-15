@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './Explor.css'
 
 const Explor = () => {
     const[services, setServices] = useState([]);
@@ -14,7 +15,7 @@ const Explor = () => {
    
 
     return (
-        <div className = ' mb-5'>
+        <div className = ' mb-5 mt-5'>
             <h2 className ='mb-4'> Our All Watch</h2>
             <Row xs={1} md={3} className="g-4">
          {
@@ -22,7 +23,7 @@ const Explor = () => {
                 services.map(service => <div key = {service._id}>
 
                     <Col>
-                    <Card>
+                    <Card className='service-part'>
                         <Card.Img variant="top" src= {service.img} />
                         <Card.Body>
                         <Card.Title>{service.name}</Card.Title>

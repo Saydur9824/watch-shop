@@ -37,7 +37,7 @@ const ManageProducts = () => {
 
                 
                     <Col>
-                    <Card>
+                    <Card className='service-part'>
                         <Card.Img variant="top" src= {service.img} />
                         <Card.Body>
                         <Card.Title>{service.name}</Card.Title>

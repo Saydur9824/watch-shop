@@ -1,16 +1,16 @@
 import React from 'react';
 import Always from '../Always/Always';
 import Banner from '../Banner/Banner';
-import Review from '../Review/Review';
 import Services from '../Services/Services';
 import Spcial from '../Spcial/Spcial';
+import UserReviews from '../UserReviews/UserReviews';
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
             <Services></Services>
-            <Review/>
+            <UserReviews></UserReviews>
             <Always></Always>
             <Spcial></Spcial>
         </div>

@@ -1,4 +1,4 @@
-# FOODSENSE project with Create MERN
+# Watch project Create with MERN
 
 This project  live website link IS [https://foodsense-c9a65.web.app/](https://foodsense-c9a65.web.app/).
 
@@ -12,27 +12,29 @@ This project  live website link IS [https://foodsense-c9a65.web.app/](https://fo
 7.mongodb
 
 ## what will you get
-1.Food service
-2.Get food
+1.Watch shop
+2.Get Watch
 
 
-## QUICK MENU                                         
-1.Beef Burgers
-2.Chicken Burgers
-3.Plant-Based Burgers
-4.Sides
+## HELP
+1.Search
+2.Information
+3.Privacy Policy
+4.Shipping Details
+5.sharing industry
 
 
 ## Authentication
 1.Login Page
 2.Goolge Authentication.
+3.Email Password Authentication
 
-## ABOUT US
-1.Our Story
-2.Our Team
-3.Our Food
-4.Health Measures
-5.Job Opportunities
+## COMPANY
+1.About Us
+2.Team
+3.Services
+4.Process
+5.Pricing
 
 
 
